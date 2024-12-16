@@ -1,4 +1,4 @@
-from zooAnimales.animal import Animal
+from zooAnimales.animal import *
 class Zona:
     def __init__(self, nombre=None, zoo=None):
         self._nombre = nombre

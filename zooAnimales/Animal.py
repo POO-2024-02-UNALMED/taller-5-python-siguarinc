@@ -3,7 +3,7 @@ from zooAnimales.ave import Ave
 from zooAnimales.mamifero import Mamifero
 from zooAnimales.pez import Pez
 from zooAnimales.reptil import Reptil
-from gestion.zona import Zona
+from gestion import *
 
 class Animal:
     total_animales = 0
