@@ -1,9 +1,4 @@
-from zooAnimales.anfibio import Anfibio
-from zooAnimales.ave import Ave
-from zooAnimales.mamifero import Mamifero
-from zooAnimales.pez import Pez
-from zooAnimales.reptil import Reptil
-from gestion import *
+from gestion.zona import Zona
 
 class Animal:
     total_animales = 0
@@ -56,6 +51,11 @@ class Animal:
 
     @staticmethod
     def totalPorTipo():
+        from zooAnimales.anfibio import Anfibio
+        from zooAnimales.ave import Ave
+        from zooAnimales.mamifero import Mamifero
+        from zooAnimales.pez import Pez
+        from zooAnimales.reptil import Reptil
         return (f"Mamiferos: {Mamifero.cantidadMamiferos()}\n"
                 f"Aves: {Ave.cantidadAves()}\n"
                 f"Reptiles: {Reptil.cantidadReptiles()}\n"

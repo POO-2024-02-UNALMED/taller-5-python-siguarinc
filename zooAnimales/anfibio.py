@@ -1,5 +1,5 @@
 from zooAnimales.animal import Animal
-from gestion import *
+from gestion.zona import Zona
 class Anfibio(Animal):
     _listado = []
     ranas = 0
