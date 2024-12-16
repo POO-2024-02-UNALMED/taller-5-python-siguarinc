@@ -1,38 +1,39 @@
 from zooAnimales.animal import Animal
+from gestion.zona import Zona
 class Reptil(Animal):
-    listado = []
+    _listado = []
     iguanas = 0
     serpientes = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, largoCola=0):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorEscamas = colorEscamas
-        self.largoCola = largoCola
-        Reptil.listado.append(self)
+        self._colorEscamas = colorEscamas
+        self._largoCola = largoCola
+        Reptil._listado.append(self)
 
     @staticmethod
     def getListado():
-        return Reptil.listado
+        return Reptil._listado
 
     @staticmethod
     def setListado(lista):
-        Reptil.listado = lista
+        Reptil._listado = lista
 
     def getColorEscamas(self):
-        return self.colorEscamas
+        return self._colorEscamas
 
     def setColorEscamas(self, colorEscamas):
-        self.colorEscamas = colorEscamas
+        self._colorEscamas = colorEscamas
 
     def getLargoCola(self):
-        return self.largoCola
+        return self._largoCola
 
     def setLargoCola(self, largoCola):
-        self.largoCola = largoCola
+        self._largoCola = largoCola
 
     @staticmethod
     def cantidadReptiles():
-        return len(Reptil.listado)
+        return len(Reptil._listado)
 
     @staticmethod
     def crearIguana(nombre, edad, genero):

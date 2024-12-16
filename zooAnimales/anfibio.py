@@ -1,38 +1,39 @@
 from zooAnimales.animal import Animal
+from gestion.zona import Zona
 class Anfibio(Animal):
-    listado = []
+    _listado = []
     ranas = 0
     salamandras = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorPiel=None, venenoso=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorPiel = colorPiel
-        self.venenoso = venenoso
-        Anfibio.listado.append(self)
+        self._colorPiel = colorPiel
+        self._venenoso = venenoso
+        Anfibio._listado.append(self)
 
     @staticmethod
     def getListado():
-        return Anfibio.listado
+        return Anfibio._listado
 
     @staticmethod
     def setListado(lista):
-        Anfibio.listado = lista
+        Anfibio._listado = lista
 
     def getColorPiel(self):
-        return self.colorPiel
+        return self._colorPiel
 
     def setColorPiel(self, colorPiel):
-        self.colorPiel = colorPiel
+        self._colorPiel = colorPiel
 
     def isVenenoso(self):
-        return self.venenoso
+        return self._venenoso
 
     def setVenenoso(self, venenoso):
-        self.venenoso = venenoso
+        self._venenoso = venenoso
 
     @staticmethod
     def cantidadAnfibios():
-        return len(Anfibio.listado)
+        return len(Anfibio._listado)
 
     def movimiento(self):
         return "saltar"

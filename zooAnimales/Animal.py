@@ -1,49 +1,50 @@
-from gestion.zona import Zona
 from zooAnimales.anfibio import Anfibio
 from zooAnimales.ave import Ave
 from zooAnimales.mamifero import Mamifero
 from zooAnimales.pez import Pez
 from zooAnimales.reptil import Reptil
+from gestion.zona import Zona
+
 class Animal:
     total_animales = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None):
-        self.nombre = nombre
-        self.edad = edad
-        self.habitat = habitat
-        self.genero = genero
-        self.zona = None
+        self._nombre = nombre
+        self._edad = edad
+        self._habitat = habitat
+        self._genero = genero
+        self._zona = None
         Animal.total_animales += 1
 
     def getNombre(self):
-        return self.nombre
+        return self._nombre
 
     def setNombre(self, nombre):
-        self.nombre = nombre
+        self._nombre = nombre
 
     def getEdad(self):
-        return self.edad
+        return self._edad
 
     def setEdad(self, edad):
-        self.edad = edad
+        self._edad = edad
 
     def getHabitat(self):
-        return self.habitat
+        return self._habitat
 
     def setHabitat(self, habitat):
-        self.habitat = habitat
+        self._habitat = habitat
 
     def getGenero(self):
-        return self.genero
+        return self._genero
 
     def setGenero(self, genero):
-        self.genero = genero
+        self._genero = genero
 
     def getZona(self):
-        return self.zona
+        return self._zona
 
     def setZona(self, zona):
-        self.zona = zona
+        self._zona = zona
 
     @staticmethod
     def getTotalAnimales():
@@ -55,7 +56,6 @@ class Animal:
 
     @staticmethod
     def totalPorTipo():
-        # Suponiendo que existen las clases Mamifero, Ave, Reptil, Pez y Anfibio
         return (f"Mamiferos: {Mamifero.cantidadMamiferos()}\n"
                 f"Aves: {Ave.cantidadAves()}\n"
                 f"Reptiles: {Reptil.cantidadReptiles()}\n"
@@ -63,7 +63,7 @@ class Animal:
                 f"Anfibios: {Anfibio.cantidadAnfibios()}")
 
     def __str__(self):
-        if self.zona is None:
+        if self._zona is None:
             return (f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, "
                     f"habito en {self.habitat} y mi género es {self.genero}")
         else:

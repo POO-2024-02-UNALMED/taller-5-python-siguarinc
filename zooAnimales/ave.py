@@ -1,31 +1,32 @@
 from zooAnimales.animal import Animal
+from gestion.zona import Zona
 class Ave(Animal):
-    listado = []
+    _listado = []
     halcones = 0
     aguilas = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorPlumas=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorPlumas = colorPlumas
-        Ave.listado.append(self)
+        self._colorPlumas = colorPlumas
+        Ave._listado.append(self)
 
     @staticmethod
     def getListado():
-        return Ave.listado
+        return Ave._listado
 
     @staticmethod
     def setListado(lista):
-        Ave.listado = lista
+        Ave._listado = lista
 
     def getColorPlumas(self):
-        return self.colorPlumas
+        return self._colorPlumas
 
     def setColorPlumas(self, colorPlumas):
-        self.colorPlumas = colorPlumas
+        self._colorPlumas = colorPlumas
 
     @staticmethod
     def cantidadAves():
-        return len(Ave.listado)
+        return len(Ave._listado)
 
     @staticmethod
     def crearHalcon(nombre, edad, genero):

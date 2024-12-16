@@ -1,38 +1,39 @@
 from zooAnimales.animal import Animal
+from gestion.zona import Zona
 class Pez(Animal):
-    listado = []
+    _listado = []
     salmones = 0
     bacalaos = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, cantidadAletas=0):
         super().__init__(nombre, edad, habitat, genero)
-        self.colorEscamas = colorEscamas
-        self.cantidadAletas = cantidadAletas
-        Pez.listado.append(self)
+        self._colorEscamas = colorEscamas
+        self._cantidadAletas = cantidadAletas
+        Pez._listado.append(self)
 
     @staticmethod
     def getListado():
-        return Pez.listado
+        return Pez._listado
 
     @staticmethod
     def setListado(lista):
-        Pez.listado = lista
+        Pez._listado = lista
 
     def getColorEscamas(self):
-        return self.colorEscamas
+        return self._colorEscamas
 
     def setColorEscamas(self, colorEscamas):
-        self.colorEscamas = colorEscamas
+        self._colorEscamas = colorEscamas
 
     def getCantidadAletas(self):
-        return self.cantidadAletas
+        return self._cantidadAletas
 
     def setCantidadAletas(self, cantidadAletas):
-        self.cantidadAletas = cantidadAletas
+        self._cantidadAletas = cantidadAletas
 
     @staticmethod
     def cantidadPeces():
-        return len(Pez.listado)
+        return len(Pez._listado)
 
     @staticmethod
     def crearSalmon(nombre, edad, genero):
