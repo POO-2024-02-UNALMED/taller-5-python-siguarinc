@@ -1,4 +1,4 @@
-from gestion import Zona
+from gestion.Zona import Zona
 
 class Animal:
     total_animales = 0
