@@ -54,13 +54,12 @@ class Animal:
         from zooAnimales.mamifero import Mamifero
         from zooAnimales.pez import Pez
         from zooAnimales.reptil import Reptil
-        return f"Mamiferos : {Mamifero.cantidadMamiferos()}\n", f"Aves : {Ave.cantidadAves()}\n", f"Reptiles : {Reptil.cantidadReptiles()}\n", f"Peces : {Pez.cantidadPeces()}\n", f"Anfibios : {Anfibio.cantidadAnfibios()}"
-
+        return f"Mamiferos : {Mamifero.cantidadMamiferos()}\n, Aves : {Ave.cantidadAves()}\n Reptiles : {Reptil.cantidadReptiles()}\n Peces : {Pez.cantidadPeces()}\n Anfibios : {Anfibio.cantidadAnfibios()}"
     def __toString__(self):
         if self._zona is None:
-            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, ", f"habito en {self.habitat} y mi género es {self.genero}"
+            return f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi género es {self._genero}"
         else:
-            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, ", f"habito en {self.habitat} y mi género es {self.genero}, ", f"la zona en la que me ubico es {self.zona}, en el {self.zona.getZoo()}"
+            return f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi género es {self._genero}, la zona en la que me ubico es {self._zona}, en el {self._zona.getZoo()}"
 
     def movimiento(self):
         return "desplazarse"
